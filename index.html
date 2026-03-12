@@ -628,16 +628,37 @@ function handleWaitlist(e) {
   const form = document.getElementById('waitlistForm');
   const btn = form.querySelector('.waitlist-btn');
   const msgEl = document.getElementById('waitlistMsg');
-  const email = form.querySelector('.waitlist-input').value;
+  const input = form.querySelector('.waitlist-input');
+  const email = input.value;
   btn.disabled = true;
   btn.textContent = 'Joining...';
-  // Simulate API call (replace with real endpoint)
-  setTimeout(() => {
-    btn.textContent = 'Joined!';
-    msgEl.className = 'waitlist-msg success';
-    msgEl.textContent = 'You\u2019re on the list! We\u2019ll notify ' + email + ' when we launch.';
-    form.querySelector('.waitlist-input').disabled = true;
-  }, 1000);
+  msgEl.className = '';
+  msgEl.textContent = '';
+  fetch('/api/waitlist', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email: email })
+  })
+  .then(function(r) { return r.json().then(function(data) { return { ok: r.ok, data: data }; }); })
+  .then(function(res) {
+    if (res.ok) {
+      btn.textContent = 'Joined!';
+      msgEl.className = 'waitlist-msg success';
+      msgEl.textContent = 'You\u2019re on the list! We\u2019ll notify ' + email + ' when we launch.';
+      input.disabled = true;
+    } else {
+      btn.textContent = 'Join Waitlist';
+      btn.disabled = false;
+      msgEl.className = 'waitlist-msg error';
+      msgEl.textContent = res.data.error || 'Something went wrong. Please try again.';
+    }
+  })
+  .catch(function() {
+    btn.textContent = 'Join Waitlist';
+    btn.disabled = false;
+    msgEl.className = 'waitlist-msg error';
+    msgEl.textContent = 'Network error. Please try again.';
+  });
   return false;
 }
 </script>

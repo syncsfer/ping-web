@@ -3,7 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SendBloc | Encrypted Messaging</title>
+<title>SendBloc | Encrypted Messaging App — Wallet-Based Decentralized Messenger</title>
+<meta name="description" content="SendBloc is a decentralized encrypted messaging app powered by wallet-based identity. No phone number, no email — just private Web3 messaging with AES-256 encryption and the Waku protocol.">
+<meta name="keywords" content="encrypted messaging app, wallet-based chat, decentralized messenger, Web3 messaging, private messaging without phone number, encrypted chat app no phone, wallet to wallet messaging, decentralized chat app, blockchain messenger, crypto messaging app, Web3 chat platform, end-to-end encrypted messenger, anonymous messaging app, peer-to-peer encrypted chat, self-sovereign identity messaging">
+<link rel="canonical" href="https://sendbloc.com/">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="SendBloc — Encrypted Messaging App with Wallet-Based Identity">
+<meta property="og:description" content="Send private messages without a phone number. SendBloc is a decentralized messenger using wallet-based chat, AES-256 encryption, and the Waku protocol.">
+<meta property="og:url" content="https://sendbloc.com/">
+<meta property="og:site_name" content="SendBloc">
+<meta property="og:image" content="https://sendbloc.com/sendbloc-icon.png">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@sendblocapp">
+<meta name="twitter:title" content="SendBloc — Decentralized Encrypted Messaging App">
+<meta name="twitter:description" content="Wallet-to-wallet encrypted chat. No phone number, no email, no servers. The Web3 messaging app built for privacy.">
+<meta name="twitter:image" content="https://sendbloc.com/sendbloc-icon.png">
 <link rel="icon" type="image/png" href="sendbloc-icon.png">
 <link rel="apple-touch-icon" href="sendbloc-icon.png">
 <link href="https://fonts.googleapis.com/css2?family=Basel+Grotesk:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
@@ -178,6 +194,16 @@ main{min-height:100vh;display:flex;flex-direction:column;align-items:center;padd
 .feature-icon svg{width:20px;height:20px}
 .feature-name{font-size:15px;font-weight:700;margin-bottom:6px;letter-spacing:-.2px}
 .feature-desc{font-size:13px;color:var(--text2);line-height:1.55}
+/* ═══ FAQ ═══ */
+.faq-list{display:flex;flex-direction:column;gap:8px}
+.faq-item{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);padding:0;overflow:hidden;transition:var(--transition)}
+.faq-item:hover{border-color:var(--border-hover)}
+.faq-item[open]{border-color:var(--border-hover);box-shadow:var(--shadow-card)}
+.faq-q{padding:20px 24px;font-size:15px;font-weight:600;cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px;letter-spacing:-.2px}
+.faq-q::-webkit-details-marker{display:none}
+.faq-q::after{content:'+';font-size:20px;font-weight:400;color:var(--text3);transition:transform .25s;flex-shrink:0}
+.faq-item[open] .faq-q::after{content:'−'}
+.faq-a{padding:0 24px 20px;font-size:14px;color:var(--text2);line-height:1.7}
 /* ═══ FOOTER ═══ */
 footer{width:100%;max-width:1080px;margin:64px auto 0;padding:32px 4px;border-top:1px solid var(--border);position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
 .footer-left{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text3)}
@@ -248,7 +274,7 @@ footer{width:100%;max-width:1080px;margin:64px auto 0;padding:32px 4px;border-to
   <!-- Hero Text -->
   <div class="hero-text">
     <h1 class="hero-title">Send messages,<br><span class="gradient">not metadata</span></h1>
-    <p class="hero-sub">Wallet-to-wallet encrypted messaging. No phone number, no email, no servers. Just your keys.</p>
+    <p class="hero-sub">The decentralized encrypted messaging app with wallet-based chat. No phone number, no email, no servers — just your keys and private Web3 messaging.</p>
   </div>
   <!-- App Card -->
   <div class="card-wrap">
@@ -384,23 +410,23 @@ footer{width:100%;max-width:1080px;margin:64px auto 0;padding:32px 4px;border-to
   <!-- Features -->
   <div class="features anim-fade anim-d5">
     <div class="features-header">
-      <span class="features-title">Built for privacy</span>
+      <h2 class="features-title">Built for privacy — the Web3 messaging platform</h2>
     </div>
     <div class="features-grid">
       <div class="feature">
         <div class="feature-icon fi-g"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
-        <div class="feature-name">End-to-End Encrypted</div>
-        <div class="feature-desc">AES-256-GCM encryption with forward secrecy. Messages are unreadable by everyone, including us.</div>
+        <div class="feature-name">End-to-End Encrypted Chat</div>
+        <div class="feature-desc">AES-256-GCM encryption with forward secrecy. A truly private encrypted chat app — messages are unreadable by everyone, including us.</div>
       </div>
       <div class="feature">
         <div class="feature-icon fi-p"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12a2 2 0 0 0 0 4h4v-4h-4z"/></svg></div>
-        <div class="feature-name">Wallet-Native Identity</div>
-        <div class="feature-desc">No phone numbers, no emails. Your wallet address is your identity. Generate new ones anytime.</div>
+        <div class="feature-name">Wallet-Based Identity</div>
+        <div class="feature-desc">No phone numbers, no emails. Your crypto wallet is your identity — self-sovereign and anonymous. Send messages without a phone number.</div>
       </div>
       <div class="feature">
         <div class="feature-icon fi-b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
-        <div class="feature-name">Fully Decentralized</div>
-        <div class="feature-desc">No central servers. Messages relay through the Waku protocol with zero single points of failure.</div>
+        <div class="feature-name">Fully Decentralized Messenger</div>
+        <div class="feature-desc">No central servers. This peer-to-peer encrypted chat relays messages through the Waku protocol with zero single points of failure.</div>
       </div>
       <div class="feature">
         <div class="feature-icon fi-b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="8" height="8" rx="1"/><rect x="14" y="2" width="8" height="8" rx="1"/><rect x="2" y="14" width="8" height="8" rx="1"/><rect x="14" y="14" width="4" height="4" rx=".5"/></svg></div>
@@ -409,14 +435,46 @@ footer{width:100%;max-width:1080px;margin:64px auto 0;padding:32px 4px;border-to
       </div>
       <div class="feature">
         <div class="feature-icon fi-g"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-        <div class="feature-name">Encrypted Groups</div>
-        <div class="feature-desc">Create group chats for your DAO or team. Every message is end-to-end encrypted for all members.</div>
+        <div class="feature-name">Encrypted Group Chat</div>
+        <div class="feature-desc">Create private group chats for your DAO or Web3 team. Every message is end-to-end encrypted across all members of your blockchain messenger.</div>
       </div>
       <div class="feature">
         <div class="feature-icon fi-p"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
         <div class="feature-name">Audited & Verified</div>
         <div class="feature-desc">Full security audit with formal verification. Zero critical vulnerabilities. Open source protocol.</div>
       </div>
+    </div>
+  </div>
+  <!-- FAQ Section -->
+  <div class="features anim-fade anim-d5" id="faq">
+    <div class="features-header">
+      <h2 class="features-title">Frequently Asked Questions</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary class="faq-q">What is a decentralized encrypted messaging app?</summary>
+        <p class="faq-a">A decentralized encrypted messaging app like SendBloc routes messages through a peer-to-peer network instead of central servers. Combined with end-to-end encryption, this means no company, government, or hacker can read your messages or collect your metadata.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">How does wallet-based chat work without a phone number?</summary>
+        <p class="faq-a">Instead of verifying your identity with a phone number or email, SendBloc uses your crypto wallet address as your identity. You generate a key pair locally on your device — your public key is your address, your private key proves ownership. No signup form, no phone verification required.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Is SendBloc a private messaging app without phone number verification?</summary>
+        <p class="faq-a">Yes. SendBloc is built entirely on wallet-based identity, so you never need a phone number, email, or any personal information to start messaging. It's a truly anonymous messaging app for anyone who values privacy.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">How does SendBloc compare to Signal or Telegram?</summary>
+        <p class="faq-a">While Signal and Telegram offer encryption, both require phone numbers, which link your conversations to your real identity. SendBloc is a decentralized messenger that uses wallet-based chat — no phone number, no central servers, and no metadata collection.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">What encryption does this Web3 messaging app use?</summary>
+        <p class="faq-a">SendBloc uses AES-256-GCM encryption with keys derived from your wallet's cryptographic key pair. Messages are relayed through the decentralized Waku protocol — no central server ever sees your content, contacts, or metadata.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Can I use SendBloc as a blockchain messenger for my DAO?</summary>
+        <p class="faq-a">Absolutely. SendBloc supports encrypted group chats perfect for DAOs, Web3 teams, and crypto communities. Every message is end-to-end encrypted and routed through decentralized infrastructure — ideal for sensitive governance discussions.</p>
+      </details>
     </div>
   </div>
   <!-- Footer -->
@@ -439,6 +497,33 @@ footer{width:100%;max-width:1080px;margin:64px auto 0;padding:32px 4px;border-to
     </div>
   </footer>
 </main>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "SendBloc",
+  "applicationCategory": "CommunicationApplication",
+  "operatingSystem": "Web, Android, iOS",
+  "description": "Decentralized encrypted messaging app with wallet-based identity. Private Web3 messaging without phone numbers or central servers.",
+  "url": "https://sendbloc.com",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "featureList": ["AES-256-GCM end-to-end encryption", "Wallet-based identity", "Decentralized Waku protocol", "No phone number required", "Encrypted group chat", "QR code sharing"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "What is a decentralized encrypted messaging app?", "acceptedAnswer": {"@type": "Answer", "text": "A decentralized encrypted messaging app like SendBloc routes messages through a peer-to-peer network instead of central servers. Combined with end-to-end encryption, this means no company, government, or hacker can read your messages or collect your metadata."}},
+    {"@type": "Question", "name": "How does wallet-based chat work without a phone number?", "acceptedAnswer": {"@type": "Answer", "text": "Instead of verifying your identity with a phone number or email, SendBloc uses your crypto wallet address as your identity. You generate a key pair locally on your device — your public key is your address, your private key proves ownership. No signup form, no phone verification required."}},
+    {"@type": "Question", "name": "Is SendBloc a private messaging app without phone number verification?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. SendBloc is built entirely on wallet-based identity, so you never need a phone number, email, or any personal information to start messaging. It's a truly anonymous messaging app for anyone who values privacy."}},
+    {"@type": "Question", "name": "How does SendBloc compare to Signal or Telegram?", "acceptedAnswer": {"@type": "Answer", "text": "While Signal and Telegram offer encryption, both require phone numbers, which link your conversations to your real identity. SendBloc is a decentralized messenger that uses wallet-based chat — no phone number, no central servers, and no metadata collection."}},
+    {"@type": "Question", "name": "What encryption does this Web3 messaging app use?", "acceptedAnswer": {"@type": "Answer", "text": "SendBloc uses AES-256-GCM encryption with keys derived from your wallet's cryptographic key pair. Messages are relayed through the decentralized Waku protocol — no central server ever sees your content, contacts, or metadata."}},
+    {"@type": "Question", "name": "Can I use SendBloc as a blockchain messenger for my DAO?", "acceptedAnswer": {"@type": "Answer", "text": "Absolutely. SendBloc supports encrypted group chats perfect for DAOs, Web3 teams, and crypto communities. Every message is end-to-end encrypted and routed through decentralized infrastructure — ideal for sensitive governance discussions."}}
+  ]
+}
+</script>
 <script>
 // Tab switching
 function setTab(el) {

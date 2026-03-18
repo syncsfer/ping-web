@@ -1,4 +1,5 @@
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
+  // Only allow POST
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
@@ -16,6 +17,9 @@ export default async function handler(req, res) {
     return res.status(500).json({ error: 'Server misconfigured.' });
   }
 
+  // Use verified domain sender, or Resend's default onboarding sender
+  const fromAddress = process.env.RESEND_FROM || 'onboarding@resend.dev';
+
   try {
     const response = await fetch('https://api.resend.com/emails', {
       method: 'POST',
@@ -24,7 +28,7 @@ export default async function handler(req, res) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'SendBloc Waitlist <waitlist@sendbloc.com>',
+        from: fromAddress,
         to: 'info@sendbloc.com',
         subject: 'New Waitlist Signup: ' + email,
         html: '<div style="font-family:sans-serif;max-width:480px;margin:0 auto;padding:24px">'
@@ -48,4 +52,4 @@ export default async function handler(req, res) {
     console.error('Email send failed:', err.message);
     return res.status(500).json({ error: 'Something went wrong.' });
   }
-}
+};
